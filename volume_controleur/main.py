@@ -63,25 +63,15 @@ class HandDetector:
                 index = main.landmark[fing2] # l'index
                 index_x, index_y = int(index.x * w), int(index.y * h)
 
-                # le centre des refferance
 
-                # cv2.circle(img, (cx, cy), 5, (255, 122, 212), cv2.FILLED)
-                # print(cx, cy)
-
-
-
-                #print(index_x, index_y, pouce_x, pouce_y)
                 distance = np.linalg.norm(np.array(pouce_x) - np.array(index_x))
                 landmarkList.append([index_x, index_y,pouce_x, pouce_y, distance])
 
-                # la distance des doits
-                test = np.linalg.norm(np.array(pouce_x) - np.array(index_x))
-                #print(test, pouce_x)
 
                 if draw:
-                    cv2.circle(img, (pouce_x, pouce_y), 10, (255, 120, 50), cv2.FILLED)
-                    cv2.circle(img, (index_x, index_y), 10, (90, 23, 255), cv2.FILLED)
-                    cv2.line(img, (pouce_x, pouce_y), (index_x, index_y), (255, 121, 143), 2)
+                    cv2.circle(img, (pouce_x, pouce_y), 8, (0, 0, 255), cv2.FILLED)
+                    cv2.circle(img, (index_x, index_y), 8, (255, 0, 0), cv2.FILLED)
+                    #cv2.line(img, (pouce_x, pouce_y), (index_x, index_y), (255, 121, 143), 2)
 
 
         return landmarkList

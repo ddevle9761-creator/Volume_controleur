@@ -32,7 +32,7 @@ def lancer() :
         success, img = cap.read()
 
         cv2.flip(img, 1)
-        img = detector.findHands(img, draw=True)
+        img = detector.findHands(img, draw=False)
         position_main = detector.position_pouce_index(img=img, draw=True)
 
 
@@ -41,7 +41,7 @@ def lancer() :
                 distance = i[-1]
 
                 volume = np.interp(distance, [0, 60], [0, 100])
-                print(volume, distance)
+
 
         game.set_volume(int(volume))
 
