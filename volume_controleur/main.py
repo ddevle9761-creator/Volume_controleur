@@ -141,16 +141,7 @@ def lancer() :
         success, img = cap.read()
         cv2.flip(img, 1)
         img = detector.findHands(img, draw=True)
-        # landmarkList = detector.trouver_Position(img)
-        # index_positon = detector.position_pouce_index(img, draw=True)
-        #
-        #
-        # if len(landmarkList) != 0 :
-        #     for m in landmarkList:
-        #        pass
-        # if len(index_positon) != 0 :
-        #     for _ in index_positon:
-        #         print(i)
+
 
         img = detector.flux_ameliorer(img)
 
