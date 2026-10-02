@@ -1,0 +1,3 @@
+pencv-python==5.0.0.93
+mediapipe==0.10.21
+
